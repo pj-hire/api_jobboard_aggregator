@@ -45,8 +45,17 @@ function searchResultBuilder() {
   	if(req3.readyState == 4 && req3.status == 200) {
       let dataThree = JSON.parse(req3.responseText);
       let containerOne = document.getElementById('container-one');
+
+      let resultsLength = '';
+      if (dataThree.totalCount <= 10) {
+        resultsLength = dataThree.totalCount;
+      }
+      else if (dataThree.totalCount > 10) {
+        resultsLength = 10;
+      }
+
       if (dataThree.totalCount >= 1) {
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < resultsLength; i++) {
 
           let divContainer = document.createElement('div');
           divContainer.setAttribute('class','divContainer');
@@ -129,8 +138,17 @@ function searchResultBuilder() {
       if (req1.status === 200) {
         let data = JSON.parse(req1.response);
         let containerTwo = document.getElementById('container-two');
+
+        let resultsLength = '';
+        if (data.length <= 10) {
+          resultsLength = data.length;
+        }
+        else if (data.length > 10) {
+          resultsLength = 10;
+        }
+
         if (data.length >= 1) {
-          for (let i = 0; i < 10; i++) {
+          for (let i = 0; i < resultsLength; i++) {
 
             let divContainer = document.createElement('div');
             divContainer.setAttribute('class','divContainer');
@@ -225,8 +243,17 @@ function searchResultBuilder() {
   	if(req2.readyState == 4 && req2.status == 200) {
       let dataTwo = JSON.parse(req2.responseText);
       let containerThree = document.getElementById('container-three');
+
+      let resultsLength = '';
+      if (dataTwo.SearchResult.SearchResultCount <= 10) {
+        resultsLength = dataTwo.SearchResult.SearchResultCount;
+      }
+      else if (dataTwo.SearchResult.SearchResultCount > 10) {
+        resultsLength = 10;
+      }
+
       if (dataTwo.SearchResult.SearchResultCount >= 1) {
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < resultsLength; i++) {
 
           let divContainer = document.createElement('div');
           divContainer.setAttribute('class','divContainer');
