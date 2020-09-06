@@ -273,7 +273,7 @@ function searchResultBuilder() {
 
           let jobCompany = document.createElement('h4');
           jobCompany.setAttribute('class', 'jobCompany');
-          jobCompany.innerHTML = dataTwo.SearchResult.SearchResultItems[0].MatchedObjectDescriptor.OrganizationName + ' - '; //---> add full time with if statement here
+          jobCompany.innerHTML = dataTwo.SearchResult.SearchResultItems[0].MatchedObjectDescriptor.OrganizationName; //---> add full time with if statement here
           div.appendChild(jobCompany);
 
           //'divTwo' contains results on right side of page, i.e. job location and job post date.
